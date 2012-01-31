@@ -1,0 +1,90 @@
+<html lang="en" style="overflow:hidden;">  
+<head>  
+  <meta charset="utf-8">  
+  <title>Tony Ng</title>  
+  <meta name="viewport" content="width=700" />
+  <link rel="stylesheet" href="css/main.css">  
+  <link rel="stylesheet" href="css/button.css">  
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>  
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>  
+  <![endif]-->  
+	<script src='snowfall.jquery.js'></script>
+	<script src='airport.js'></script>
+	<script>
+	$(document).ready(function(){
+		$(document).snowfall();
+		$(document).snowfall({collection : '.collectonme', flakeCount : 160});
+	});
+	</script>
+</head>  
+<body> 
+	<div class="collectonme">
+    <p>
+	</div>
+<div class="container">
+<!-- snow collection on button <div>
+    <p class="collectonme">
+	</div> -->
+	<div> <a id="button" href="#">
+		<div id="switch">Play
+		</div>
+	  	<div id="switch" style="display:none">Pause
+	  	</div></a>
+		<a id="button-2" href="#"></a>
+	</div>
+	<div style="position: relative; left: 0; top: 0;">
+		<h1><a href="http://tonynggg.posterous.com/" target="_blank">Posterous</a></h1>		
+		<h1><a href="http://www.twitter.com/tonynggg" target="_blank">@TonyNggg</a></h1>
+		<div class="scroll" style="position: absolute; top: 10px; left: 420px;">
+			<h2 class="airport"></h2> 
+		</div>
+	</div>
+</div> <!-- close container -->
+<audio id="audio" loop="loop">
+  <source src="audio/Your_Hand_In_Mine_Short.ogg" type="audio/ogg" />
+  <source src="audio/Your_Hand_In_Mine_Short.mp3" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>
+</body>  
+<footer>	
+	<!-- 			window.setInterval(function() {
+			$('#button').removeClass('active');
+			$('div#switch').text('Play');
+		}, 3000);
+		-->
+	<script>
+	$(function(){
+	    $('#button').click(function() { 
+	        $(this).toggleClass('active');
+	        $('#button-2').toggleClass('active');
+			$('div#switch').toggle();
+			  if ($('#audio').get(0).paused == false) {
+			      $('#audio').get(0).pause();
+			  } else {
+			      $('#audio').get(0).play();
+			  }	
+	    });
+	});
+	$(function(){
+		$('h2.airport').airport([ "Hello!", "I'm Tony!", "Say hi!" ]);
+		$('.scroll').hover(function() {
+			$(this).fadeOut(4500);
+		});
+	});
+	</script>
+	<script type="text/javascript">
+
+  	var _gaq = _gaq || [];
+  	_gaq.push(['_setAccount', 'UA-28607739-1']);
+  	_gaq.push(['_trackPageview']);
+
+  	(function() {
+    	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  	})();
+
+	</script>
+</footer>	
+</html>
